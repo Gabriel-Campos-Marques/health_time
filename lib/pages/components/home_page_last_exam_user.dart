@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_time/constants/constants.dart';
 
 class HomePageLastExamUser extends StatelessWidget {
   const HomePageLastExamUser({
@@ -19,10 +20,10 @@ class HomePageLastExamUser extends StatelessWidget {
         width: 170,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
+          color: secondColor,
           boxShadow: const [
             BoxShadow(
-              color: Color.fromARGB(100, 77, 77, 77),
+              color: blurColor,
               blurRadius: 10,
               offset: Offset(1, 10),
             ),
@@ -37,7 +38,9 @@ class HomePageLastExamUser extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                    color: const Color.fromARGB(255, 176, 241, 255), width: 5),
+                  color: primaryColor,
+                  width: 5,
+                ),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

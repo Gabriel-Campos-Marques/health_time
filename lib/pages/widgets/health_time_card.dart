@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_time/constants/constants.dart';
 
 class HealthTimeCards extends StatelessWidget {
   const HealthTimeCards({
@@ -19,10 +20,10 @@ class HealthTimeCards extends StatelessWidget {
           width: 150,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.white,
+            color: secondColor,
             boxShadow: const [
               BoxShadow(
-                color: Color.fromARGB(100, 77, 77, 77),
+                color: blurColor,
                 blurRadius: 10,
                 offset: Offset(1, 10),
               ),
@@ -37,10 +38,10 @@ class HealthTimeCards extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   border: Border.all(
-                    color: const Color.fromARGB(255, 176, 241, 255),
+                    color: primaryColor,
                     width: 5,
                   ),
-                  color: Colors.white,
+                  color: secondColor,
                 ),
               ),
               Container(
@@ -48,7 +49,7 @@ class HealthTimeCards extends StatelessWidget {
                 width: 110,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  color: Colors.white,
+                  color: secondColor,
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),

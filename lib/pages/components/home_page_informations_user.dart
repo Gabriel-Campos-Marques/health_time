@@ -12,7 +12,10 @@ class HomePageInformationsUser extends StatelessWidget {
     return Column(
       children: const [
         HomePageHealthUser(),
-        HomePageLastExamUser(dateExam: "01/05/2022", typeExam: "Hemograma"),
+        HomePageLastExamUser(
+          dateExam: "01/05/2022",
+          typeExam: "Hemograma",
+        ),
       ],
     );
   }

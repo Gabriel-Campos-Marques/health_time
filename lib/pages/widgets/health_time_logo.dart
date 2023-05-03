@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_time/constants/constants.dart';
 
 class HealthTimeLogo extends StatelessWidget {
   const HealthTimeLogo({super.key});
@@ -12,12 +13,10 @@ class HealthTimeLogo extends StatelessWidget {
         width: 250,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.white,
+            color: secondColor,
             boxShadow: const [
               BoxShadow(
-                  color: Color.fromARGB(255, 77, 77, 77),
-                  blurRadius: 10,
-                  offset: Offset(1, 10)),
+                  color: blurColor, blurRadius: 10, offset: Offset(1, 10)),
             ]),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
