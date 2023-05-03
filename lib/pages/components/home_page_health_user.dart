@@ -57,7 +57,7 @@ class HomePageHealthUser extends StatelessWidget {
                   ),
                   HealthTimeInformationsUserWidget(
                     icon: "assets/data-de-nascimento.png",
-                    information: "17/10/2001",
+                    information: "17/10/01",
                   ),
                 ],
               ),
