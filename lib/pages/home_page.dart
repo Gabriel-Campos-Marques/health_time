@@ -24,10 +24,10 @@ class HomePage extends StatelessWidget {
               const HealthTimeLogo(),
               SizedBox(
                 height: MediaQuery.of(context).size.height * .65,
-                child: SingleChildScrollView(
+                child: const SingleChildScrollView(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       HomePageButtons(),
                       HomePageInformationsUser(),
                     ],

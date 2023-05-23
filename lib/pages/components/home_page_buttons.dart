@@ -9,12 +9,12 @@ class HomePageButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
+          children: [
             HealthTimeCards(image: 'assets/consulta_exames.png'),
             HealthTimeCards(image: 'assets/ler_qrcode.png'),
             HealthTimeCards(image: 'assets/configuracoes.png'),

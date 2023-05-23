@@ -9,9 +9,17 @@ const List<BoxShadow> boxShadow = [
   BoxShadow(
     color: blurColor,
     blurRadius: 10,
+    offset: Offset(1, 1),
+  )
+];
+const List<BoxShadow> boxShadowEditing = [
+  BoxShadow(
+    color: blurColor,
+    blurRadius: 4,
     offset: Offset(1, 10),
   )
 ];
 const TextStyle textStyle = TextStyle(
-  fontSize: 18,
+  fontSize: 24,
+  fontWeight: FontWeight.bold,
 );

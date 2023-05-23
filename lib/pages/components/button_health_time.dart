@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:health_time/constants/constants.dart';
 
 class ButtonHealthTime extends StatelessWidget {
-  const ButtonHealthTime({Key? key}) : super(key: key);
+  const ButtonHealthTime({
+    Key? key,
+    required this.text,
+    required this.height,
+    required this.onPress,
+  }) : super(key: key);
+
+  final String text;
+  final double height;
+  final Function onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +20,7 @@ class ButtonHealthTime extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          height: 60,
+          height: height,
           width: MediaQuery.of(context).size.width * .65,
           decoration: BoxDecoration(
             color: secondColor,
@@ -23,18 +32,18 @@ class ButtonHealthTime extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.center,
-                height: 50,
+                height: height - 10,
                 width: MediaQuery.of(context).size.width * .62,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(cornerRadiusSecondary),
                   color: secondColor,
                   border: Border.all(
                     color: primaryColor,
-                    width: 5,
+                    width: 4,
                   ),
                 ),
                 child: Text(
-                  'Cadastre-se',
+                  text,
                   style: textStyle,
                 ),
               ),

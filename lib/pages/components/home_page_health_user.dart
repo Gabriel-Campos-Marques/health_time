@@ -40,9 +40,9 @@ class HomePageHealthUser extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
                 color: secondColor,
               ),
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
+                children: [
                   HealthTimeInformationsUserWidget(
                     icon: "assets/gota-de-sangue.png",
                     information: "A+",

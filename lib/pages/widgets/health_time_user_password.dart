@@ -22,12 +22,15 @@ class HealthTimeUserPassword extends StatelessWidget {
               child: const Text(
                 'Esqueceu a Senha',
                 style: TextStyle(
-                    decoration: TextDecoration.underline, fontSize: 16),
+                  decoration: TextDecoration.underline,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
                 textAlign: TextAlign.left,
               ),
             ),
           ),
-          const ButtonHealthTime(),
+          ButtonHealthTime(height: 60, text: 'Entrar', onPress: () {}),
         ],
       ),
     );

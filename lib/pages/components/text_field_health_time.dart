@@ -17,9 +17,9 @@ class TextFieldHealthTime extends StatelessWidget {
         height: 70,
         width: MediaQuery.of(context).size.width * .9,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(cornerRadiusPrimary),
-          color: secondColor,
-        ),
+            borderRadius: BorderRadius.circular(cornerRadiusPrimary),
+            color: secondColor,
+            boxShadow: boxShadow),
         child: Stack(
           alignment: Alignment.center,
           children: [

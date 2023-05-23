@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:health_time/constants/constants.dart';
-import 'package:health_time/pages/components/text_field_health_time.dart';
 import 'package:health_time/pages/widgets/health_time_logo.dart';
 
 import 'components/button_health_time.dart';
@@ -19,10 +18,14 @@ class LoginPage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              HealthTimeLogo(),
-              HealthTimeUserPassword(),
-              ButtonHealthTime()
+            children: [
+              const HealthTimeLogo(),
+              const HealthTimeUserPassword(),
+              ButtonHealthTime(
+                height: 40,
+                text: 'Cadastre-se',
+                onPress: () {},
+              )
             ],
           ),
         ),

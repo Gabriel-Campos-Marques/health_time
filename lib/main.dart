@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_time/pages/home_page.dart';
-import 'package:health_time/pages/login_page.dart';
+import 'package:health_time/pages/config_page.dart';
 
 void main() {
   runApp(const HealthTimeApp());
@@ -18,7 +17,7 @@ class HealthTimeApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      home: const ConfigPage(),
     );
   }
 }
