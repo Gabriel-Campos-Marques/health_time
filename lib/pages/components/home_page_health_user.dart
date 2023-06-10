@@ -11,7 +11,7 @@ class HomePageHealthUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0),
+      padding: const EdgeInsets.only(top: 28.0),
       child: Container(
         height: 250,
         width: 170,

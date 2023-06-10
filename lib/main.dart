@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_time/pages/config_page.dart';
+import 'package:health_time/pages/login_page.dart';
+import 'package:health_time/pages/routes/route_generate.dart';
 
 void main() {
   runApp(const HealthTimeApp());
@@ -8,16 +9,16 @@ void main() {
 class HealthTimeApp extends StatelessWidget {
   const HealthTimeApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGerenate.generateRoute,
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const ConfigPage(),
+      home: const LoginPage(),
     );
   }
 }

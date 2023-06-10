@@ -17,16 +17,15 @@ class RegisterPage extends StatelessWidget {
         child: SafeArea(
           child: ListView(
             itemExtent: 700,
-            children: [
+            children: const [
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const HealthTimeLogo(),
-                  const HealthTimeRegister(),
+                  HealthTimeLogo(),
+                  HealthTimeRegister(),
                   ButtonHealthTime(
                     text: 'Cadastrar',
                     height: 70,
-                    onPress: () {},
                   ),
                 ],
               )

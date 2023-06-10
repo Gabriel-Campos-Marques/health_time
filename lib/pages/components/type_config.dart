@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class TypeConfig extends StatefulWidget {
-  const TypeConfig(
-      {super.key,
-      required this.labelText,
-      required this.iconType,
-      required this.typeItems,
-      required this.selectItem});
+  TypeConfig({
+    super.key,
+    required this.labelText,
+    required this.iconType,
+    required this.typeItems,
+    required this.selectItem,
+    required this.informacoes,
+  });
 
   final String labelText;
   final String iconType;
   final List<String> typeItems;
-  final String selectItem;
+  late String selectItem;
+  final List<String> informacoes;
 
   @override
   State<TypeConfig> createState() => _TypeConfigState();
 }
 
 class _TypeConfigState extends State<TypeConfig> {
-  List<String> bloodType = ['A+', 'O+', 'AB+'];
-
   @override
   Widget build(BuildContext context) {
-    String? selectType = widget.selectItem;
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,7 +62,7 @@ class _TypeConfigState extends State<TypeConfig> {
                 Icons.keyboard_arrow_down,
               ),
               alignment: Alignment.centerRight,
-              value: selectType,
+              value: widget.selectItem,
               items: widget.typeItems
                   .map((item) => DropdownMenuItem<String>(
                         value: item,
@@ -73,7 +73,17 @@ class _TypeConfigState extends State<TypeConfig> {
                       ))
                   .toList(),
               onChanged: (item) => setState(
-                () => selectType = item,
+                () {
+                  if (widget.informacoes[0] == widget.selectItem) {
+                    widget.informacoes[0] = item!;
+                  } else if (widget.informacoes[1] == widget.selectItem) {
+                    widget.informacoes[1] = item!;
+                  } else {
+                    widget.informacoes[2] = item!;
+                  }
+
+                  widget.selectItem = item;
+                },
               ),
             ),
           ),

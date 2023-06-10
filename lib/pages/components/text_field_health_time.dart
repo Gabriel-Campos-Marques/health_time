@@ -5,9 +5,11 @@ class TextFieldHealthTime extends StatelessWidget {
   const TextFieldHealthTime({
     super.key,
     required this.hintText,
+    required this.textEditingController,
   });
 
   final String hintText;
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,7 @@ class TextFieldHealthTime extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
+                    controller: textEditingController,
                     style: const TextStyle(
                       fontSize: 18,
                     ),

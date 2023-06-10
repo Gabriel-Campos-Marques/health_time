@@ -1,19 +1,32 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:health_time/models/user.dart';
 import 'package:health_time/pages/components/button_health_time.dart';
 import 'package:health_time/pages/components/text_field_health_time.dart';
 
-class HealthTimeUserPassword extends StatelessWidget {
+class HealthTimeUserPassword extends StatefulWidget {
   const HealthTimeUserPassword({
     super.key,
   });
+
+  @override
+  State<HealthTimeUserPassword> createState() => _HealthTimeUserPasswordState();
+}
+
+class _HealthTimeUserPasswordState extends State<HealthTimeUserPassword> {
+  final TextEditingController _userNameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Column(
         children: [
-          const TextFieldHealthTime(hintText: 'CPF'),
-          const TextFieldHealthTime(hintText: 'Senha'),
+          TextFieldHealthTime(
+              hintText: 'CPF', textEditingController: _userNameController),
+          TextFieldHealthTime(
+              hintText: 'Senha', textEditingController: _passwordController),
           InkWell(
             onTap: () {},
             child: Container(
@@ -30,7 +43,29 @@ class HealthTimeUserPassword extends StatelessWidget {
               ),
             ),
           ),
-          ButtonHealthTime(height: 60, text: 'Entrar', onPress: () {}),
+          InkWell(
+            onTap: () async {
+              User user = User(
+                userName: _userNameController.text,
+                passWord: _passwordController.text,
+              );
+
+              user = await user.usuarioCadastrado(user.userName, user.passWord);
+
+              if (user.ativo! && context.mounted) {
+                Navigator.pushReplacementNamed(context, '/dashboard',
+                    arguments: {
+                      'user': user,
+                    });
+              } else {
+                log('Erro');
+              }
+            },
+            child: const ButtonHealthTime(
+              height: 60,
+              text: 'Entrar',
+            ),
+          ),
         ],
       ),
     );

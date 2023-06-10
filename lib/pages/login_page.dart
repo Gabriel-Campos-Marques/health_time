@@ -15,16 +15,15 @@ class LoginPage extends StatelessWidget {
         height: double.maxFinite,
         width: double.maxFinite,
         color: primaryColor,
-        child: SafeArea(
+        child: const SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const HealthTimeLogo(),
-              const HealthTimeUserPassword(),
+              HealthTimeLogo(),
+              HealthTimeUserPassword(),
               ButtonHealthTime(
-                height: 40,
+                height: 50,
                 text: 'Cadastre-se',
-                onPress: () {},
               )
             ],
           ),
