@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_time/constants/constants.dart';
+import 'package:health_time/models/user.dart';
 import 'package:health_time/pages/components/type_config.dart';
 import 'package:health_time/repository/healthtime_repository.dart';
 
@@ -7,9 +8,11 @@ class HealthTimeConfigPanel extends StatelessWidget {
   const HealthTimeConfigPanel({
     super.key,
     required this.informacoesUsuario,
+    required this.user,
   });
 
   final List<String> informacoesUsuario;
+  final User user;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +43,7 @@ class HealthTimeConfigPanel extends StatelessWidget {
                   selectItem: informacoesUsuario[2],
                   typeItems: tipoSanguineoRepository,
                   informacoes: informacoesUsuario,
+                  user: user,
                 ),
                 TypeConfig(
                   iconType: 'assets/altura.png',
@@ -47,6 +51,7 @@ class HealthTimeConfigPanel extends StatelessWidget {
                   selectItem: informacoesUsuario[0],
                   typeItems: alturaRepository,
                   informacoes: informacoesUsuario,
+                  user: user,
                 ),
                 TypeConfig(
                   iconType: 'assets/perda-de-peso.png',
@@ -54,6 +59,7 @@ class HealthTimeConfigPanel extends StatelessWidget {
                   selectItem: informacoesUsuario[1],
                   typeItems: pesoRepository,
                   informacoes: informacoesUsuario,
+                  user: user,
                 ),
               ],
             ),

@@ -57,22 +57,30 @@ class _ConfigPageState extends State<ConfigPage> {
               ),
               HealthTimeConfigPanel(
                 informacoesUsuario: widget.informacoesUser,
+                user: widget.user,
               ),
               Column(
                 children: [
                   InkWell(
                     onTap: () {
                       widget.user.updateInformationUser(
-                        widget.user.idUser!,
-                        int.parse(
-                          widget.informacoesUser[1].toString().substring(0, 2),
-                        ),
-                        double.parse(widget.informacoesUser[0]
-                            .toString()
-                            .substring(0, 4)),
-                        widget.informacoesUser[2].toString(),
-                      );
-                      Navigator.pop(context);
+                          widget.user.idUser!,
+                          int.parse(
+                            widget.informacoesUser[1]
+                                .toString()
+                                .substring(0, 2),
+                          ),
+                          double.parse(widget.informacoesUser[0]
+                              .toString()
+                              .substring(0, 4)),
+                          widget.informacoesUser[2].toString(),
+                          widget.user);
+                      Navigator.pushNamedAndRemoveUntil(context, '/dashboard',
+                          (Route<dynamic> route) => false,
+                          arguments: {
+                            'user': widget.user,
+                          });
+                      // Navigator.pop(context);
                     },
                     child: const ButtonHealthTime(
                       text: 'Salvar',

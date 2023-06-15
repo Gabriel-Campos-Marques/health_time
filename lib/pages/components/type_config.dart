@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../models/user.dart';
+
 // ignore: must_be_immutable
 class TypeConfig extends StatefulWidget {
   TypeConfig({
@@ -9,6 +11,7 @@ class TypeConfig extends StatefulWidget {
     required this.typeItems,
     required this.selectItem,
     required this.informacoes,
+    required this.user,
   });
 
   final String labelText;
@@ -16,6 +19,7 @@ class TypeConfig extends StatefulWidget {
   final List<String> typeItems;
   late String selectItem;
   final List<String> informacoes;
+  final User user;
 
   @override
   State<TypeConfig> createState() => _TypeConfigState();
@@ -76,12 +80,14 @@ class _TypeConfigState extends State<TypeConfig> {
                 () {
                   if (widget.informacoes[0] == widget.selectItem) {
                     widget.informacoes[0] = item!;
+                    widget.user.altura = item;
                   } else if (widget.informacoes[1] == widget.selectItem) {
                     widget.informacoes[1] = item!;
+                    widget.user.peso = item;
                   } else {
                     widget.informacoes[2] = item!;
+                    widget.user.tipoSanguineo = item;
                   }
-
                   widget.selectItem = item;
                 },
               ),

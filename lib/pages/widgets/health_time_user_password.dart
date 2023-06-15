@@ -45,20 +45,24 @@ class _HealthTimeUserPasswordState extends State<HealthTimeUserPassword> {
           ),
           InkWell(
             onTap: () async {
-              User user = User(
-                userName: _userNameController.text,
-                passWord: _passwordController.text,
-              );
+              if (_userNameController.text.isNotEmpty &&
+                  _passwordController.text.isNotEmpty) {
+                User user = User(
+                  userName: _userNameController.text,
+                  passWord: _passwordController.text,
+                );
 
-              user = await user.usuarioCadastrado(user.userName, user.passWord);
+                user = await user.usuarioCadastrado(
+                    user.userName!, user.passWord!);
 
-              if (user.ativo! && context.mounted) {
-                Navigator.pushReplacementNamed(context, '/dashboard',
-                    arguments: {
-                      'user': user,
-                    });
-              } else {
-                log('Erro');
+                if (user.ativo! && context.mounted) {
+                  Navigator.pushReplacementNamed(context, '/dashboard',
+                      arguments: {
+                        'user': user,
+                      });
+                } else {
+                  log('Erro');
+                }
               }
             },
             child: const ButtonHealthTime(

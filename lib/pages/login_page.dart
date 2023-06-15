@@ -17,10 +17,11 @@ class LoginPage extends StatelessWidget {
         color: primaryColor,
         child: const SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               HealthTimeLogo(),
+              Spacer(),
               HealthTimeUserPassword(),
+              Spacer(),
               ButtonHealthTime(
                 height: 50,
                 text: 'Cadastre-se',

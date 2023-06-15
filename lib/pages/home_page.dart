@@ -6,11 +6,16 @@ import 'package:health_time/pages/components/home_page_name_user.dart';
 import 'components/home_page_informations_user.dart';
 import 'widgets/health_time_logo.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.user}) : super(key: key);
 
   final User user;
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +34,8 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      HomePageButtons(user: user),
-                      const HomePageInformationsUser(),
+                      HomePageButtons(user: widget.user),
+                      HomePageInformationsUser(user: widget.user),
                     ],
                   ),
                 ),
