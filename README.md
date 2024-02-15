@@ -1,6 +1,6 @@
 # health_time
 
-A new Flutter project.
+Projeto desenvolvido para consultorios clinicos, de forma a criar um sistema completo e unificado para atender a todas as pessoas
 
 ## Getting Started
 
